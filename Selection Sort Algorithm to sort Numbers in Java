@@ -1,0 +1,23 @@
+//  Selection Sort Algorithm to sort Numbers in Java
+
+    Scanner sc=new Scanner(System.in);
+	  System.out.print("Enter number of items for the array : ");
+	  int l=sc.nextInt();
+      int n[]=new int[l];
+      System.out.print("Enter "+l+" numbers : "); 
+      for(int i=0;i<l;i++)
+          n[i]=sc.nextInt();
+      for(int i=0;i<l-1;i++)
+      {
+          int mindex=i;
+          for(int j=i+1;j<l;j++)
+          {
+              if(n[j]<n[mindex])
+                mindex=j;
+          }
+          int tmp=n[mindex];
+          n[mindex]=n[i];
+          n[i]=tmp;
+      }
+      for(int i=0;i<l;i++)
+          System.out.print(n[i]+ " ");
