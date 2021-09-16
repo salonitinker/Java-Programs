@@ -1,4 +1,9 @@
+
 //    Bubble Sort Algorithm to sort String Characters
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
       System.out.print("Enter a String : ");
       Scanner sc=new Scanner(System.in);
       String s=sc.nextLine();
@@ -27,3 +32,5 @@
         }
         for(int i=0;i<l;i++)
             System.out.print(str[i]);
+    }
+}
