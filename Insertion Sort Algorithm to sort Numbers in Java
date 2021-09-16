@@ -1,0 +1,29 @@
+//  Insertion Sort Algorithm to sort Numbers in Java
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+	  System.out.print("Enter number of items for the array : ");
+	  int l=sc.nextInt();
+      int arr[]=new int[l];
+      System.out.print("Enter "+l+" numbers : "); 
+      for(int i=0;i<l;i++)
+          arr[i]=sc.nextInt();
+      for(int i=1;i<l;i++)
+      {
+          int key=arr[i];
+          int j=i-1;
+          for(;j>=0 && arr[j]>key;j--)
+          {
+            arr[j+1]=arr[j];
+          }
+          arr[j+1]=key;
+          for(int k=0;k<l;k++)
+            System.out.print(arr[k]+ " ");
+          System.out.println();
+      }
+      for(int i=0;i<l;i++)
+          System.out.print(arr[i]+ " ");
+  }
+}
