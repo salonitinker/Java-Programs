@@ -1,22 +1,21 @@
 //    Bubble Sort Algorithm to sort given Numbers
 //    Code by Saloni Tinker in Jan, 2019
-
-	  Scanner sc=new Scanner(System.in);
-	  System.out.print("Enter number of items for the array : ");
-	  int l=sc.nextInt();
+import java.util.*;
+public class Main
+{
+      public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      System.out.print("Enter number of items for the array : ");
+      int l=sc.nextInt();
       int n[]=new int[l];
       System.out.print("Enter "+l+" numbers : "); 
       for(int i=0;i<l;i++)
-      {
           n[i]=sc.nextInt();
-      }
-      //int l=n.length;
       boolean flag;
       for(int i=0;i<l-1;i++)
       {
           flag=false;
           for(int j=0;j<l-i-1;j++)
-          {
               if(n[j]>n[j+1])
               {
                   int tmp=n[j+1];
@@ -24,11 +23,10 @@
                   n[j]=tmp;
                   flag=true;
               }
-          }
           if (flag==false)
             break;
       }
       for(int i=0;i<l;i++)
-      {
           System.out.print(n[i]+ " ");
-      }
+  }
+}
