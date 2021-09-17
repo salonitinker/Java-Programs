@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main
+{
+	    public static void main(String[] args) {
+      System.out.print("Enter the number of digits for the array : ");
+      Scanner sc=new Scanner(System.in);
+      int l=sc.nextInt();
+      System.out.print("Enter "+l+" digits : ");
+      int n[]=new int[l];
+      for(int i=0;i<l;i++)
+      n[i]=sc.nextInt();
+      boolean isOdd=true;
+      for(int i:n)
+      {
+          if(i%2==0)
+          {
+              isOdd=false;
+              break;
+          }
+      }
+      if(isOdd==true)
+          System.out.print("Odd");
+      else
+          System.out.print("Even");
+    }
+  }
