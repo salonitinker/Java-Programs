@@ -9,10 +9,9 @@ public class Main
 		StringBuilder string=new StringBuilder();
 		char[] s= new char[l];
 		s=str.toCharArray();
-		for(char c:s){
+		for(char c:s)
 			if(!Character.isWhitespace(c))
 				string.append(c);
-		}
 		System.out.print(string.toString());
 	}
 }
