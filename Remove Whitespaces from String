@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main
+{
+	  public static void main(String[] args) {
+		System.out.print("Enter a string : ");
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		int l=str.length();
+		StringBuilder string=new StringBuilder();
+	  char[] s= new char[l];
+	  s=str.toCharArray();
+	  for(char c:s){
+	    if(!Character.isWhitespace(c))
+	      string.append(c);
+	    }
+	    System.out.print(string.toString());
+	}
+}
