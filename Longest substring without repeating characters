@@ -1,0 +1,62 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String s= "java2novice";
+	    System.out.println(lengthOfLongestSubstring(s));
+	}
+	public static int lengthOfLongestSubstring(String S) {
+	    int res=0;
+	    int i=0;
+	    int j=0;
+	    HashMap<Character,Integer> map=new HashMap<>();
+	    while(true)
+	    {
+	        //int k=0;
+	        boolean f1=false;
+	        boolean f2=false;
+	        //acquire values
+	        while(i<S.length()-1)
+	        {
+	            //k++;
+	            f1=true;
+	            i++;
+	            char ch=S.charAt(i);
+	            map.put(ch,map.getOrDefault(ch,0)+1);
+	            if(map.get(ch)==2)
+	                break;
+	            else
+	            {
+	                k++;
+	                int len=i-j;
+	                if(len>res)
+	                {
+	                    res=len;
+	                    //if(j>)
+	                    //System.out.println((S.substring(i,j+k)));
+	                }
+	            }
+	            
+	        }
+	        //release when invalid
+	        while(j<i){
+	            f2=true;
+	            j++;
+	            char ch=S.charAt(j);
+	            map.put(ch, map.get(ch)+1);
+	            if(map.get(ch)==1)
+	                break;
+	        }
+	        if(f1==false && f2==false)
+	            break;
+	    }
+	    return res;
+	}
+}
