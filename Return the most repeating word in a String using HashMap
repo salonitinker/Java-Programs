@@ -1,0 +1,46 @@
+import java.util.*;
+ 
+class Main {
+ 
+    static StringBuilder findWord(StringBuilder[] arr)
+    {
+ 
+        HashMap<StringBuilder, Integer> hs = new HashMap<StringBuilder, Integer>();
+ 
+        for (int i = 0; i < arr.length; i++) {
+            if (hs.containsKey(arr[i])) {
+                hs.put(arr[i], hs.get(arr[i]) + 1);
+            }
+            else {
+                hs.put(arr[i], 1);
+            }
+        }
+ 
+        Set<Map.Entry<StringBuilder, Integer> > set = hs.entrySet();
+        StringBuilder key=new StringBuilder();
+        key.append("");
+        int value = 0;
+ 
+        for (Map.Entry<StringBuilder, Integer> me : set) {
+            if (me.getValue() > value) {
+                value = me.getValue();
+                key = me.getKey();
+            }
+        }
+ 
+        return key;
+    }
+ 
+    // Driver code
+    public static void main(String[] args)
+    {
+        String[] str={"saloni","saloni","yinkrt","tinker"};
+        StringBuilder[] sb=new StringBuilder[str.length];
+        for (int i = 0; i < sb.length; i++)
+            sb[i] = new StringBuilder ("");
+        for(int i=0;i<sb.length;i++)
+            sb[i].append(str[i]);
+        StringBuilder res = findWord(sb);
+        System.out.println(res);
+    }
+}
