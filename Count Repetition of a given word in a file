@@ -5,16 +5,22 @@ public class Main
 {
     public static void main(String[] args)
     {
-		int count=getWordCount("largefile.txt","saloni");
-		    System.out.print("Count is : "+count);
-	}
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a word to search in the file : ");
+        String word= sc.nextLine();
+	int count=getWordCount("largefile.txt",word);
+	if(count==0)
+		System.out.print("The word doesn't exist in the file");
+	else
+		System.out.print("Word Count is : "+count);
+     }
 	
-	public static int getWordCount(String filename, String word)
+     public static int getWordCount(String filename, String word)
+     {
+     	int count=0;
+	try
 	{
-	    int count=0;
-	    try
-		{
-		    File file=new File("largefile.txt");
+		File file=new File("largefile.txt");
     		if(!file.exists())
     		    System.out.print("File does not exists!");
     		else
@@ -24,17 +30,13 @@ public class Main
     		    while(sc.hasNextLine())
     		    {
     		        line = sc.nextLine();
-    		        {
-                    String[] words = line.split(" ");
-                    for(int i=0;i<words.length;i++)
-                    {
-                        if(words[i].equals(word))
-                        count++;
-                    }
-    		        }
-                }
+                    	String[] words = line.split(" ");
+                    	for(int i=0;i<words.length;i++)
+                        	if(words[i].equals(word))
+                        		count++;
+    		    }                
     		}
-		}
+	}
     	catch(Exception e)
     	{
     	    System.out.print(e);
