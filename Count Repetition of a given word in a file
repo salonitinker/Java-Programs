@@ -1,0 +1,44 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+		int count=getWordCount("largefile.txt","saloni");
+		    System.out.print("Count is : "+count);
+	}
+	
+	public static int getWordCount(String filename, String word)
+	{
+	    int count=0;
+	    try
+		{
+		    File file=new File("largefile.txt");
+    		if(!file.exists())
+    		    System.out.print("File does not exists!");
+    		else
+    		{
+    		    Scanner sc=new Scanner(file); 
+    		    String line;
+    		    while(sc.hasNextLine())
+    		    {
+    		        line = sc.nextLine();
+    		        {
+                    String[] words = line.split(" ");
+                    for(int i=0;i<words.length;i++)
+                    {
+                        if(words[i].equals(word))
+                        count++;
+                    }
+    		        }
+                }
+    		}
+		}
+    	catch(Exception e)
+    	{
+    	    System.out.print(e);
+    	}
+    	return count;
+	}
+}
