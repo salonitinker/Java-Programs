@@ -44,7 +44,7 @@ jobs:
 
       # Push source to scratch org
       - name: "Push source to scratch org"
-        run: sfdx force:source:push
+        run: sfdx force:source:push  
 
       # Run Apex tests
       - name: "Run apex tests"
