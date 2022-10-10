@@ -1,0 +1,20 @@
+{
+  "orgName": "salonitinker",
+  "edition": "Developer",
+  "features": [],
+  "settings": {
+      "lightningExperienceSettings": {
+          "enableS1DesktopEnabled": true
+      },
+      "mobileSettings": {
+          "enableS1EncryptedStoragePref2": false
+      },
+      "userManagementSettings": {
+          "enableNewProfileUI": true
+      },
+      "contentSettings": {
+          "skipContentAssetTriggers": true,
+          "skipContentAssetTriggersOnDeploy": true
+      }
+  }
+}
