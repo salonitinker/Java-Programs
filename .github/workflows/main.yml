@@ -50,14 +50,6 @@ jobs:
       - name: "Run apex tests"
         run: sfdx force:apex:test:run -w 5
 
-      # Run LWC tests
-      - name: "Run LWC tests"
-        run: |
-          npm install
-          npm test
-        env:
-          CI: true
-      
       # Housekeeping
       - name: "Delete scratch org"
         if: always()
